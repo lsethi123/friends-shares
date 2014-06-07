@@ -1,0 +1,21 @@
+<h3>Listing Events wise shares</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Event Name</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+<% @evnets_shares_h.each do |k,v| %>
+
+  <tr>
+    <td><%= v[:name] %></td>
+    <td><%= v[:total] %></td>
+    </tr>
+      <tr>
+      <%v[:user].each_value do |value|%>
+      <td><%=value[:name]%></td>
+      <td><%=value[:share]%></td>
+
+      <%end%>
+  </tr>
+<% end %>

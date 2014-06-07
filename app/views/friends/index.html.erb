@@ -1,0 +1,26 @@
+<h3>Listing friends</h3>
+
+<div class="clearfix pull-right new-button">
+  <%= link_to 'New Friend', new_friend_path ,:class => 'btn btn-primary '%>
+</div>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Created Time</th>
+    <th>Updated Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @friends.each do |friend| %>
+  <tr>
+    <td><%= friend.name %></td>
+    <td><%= friend.created_at %></td>
+    <td><%= friend.updated_at %></td>
+    <td><%= link_to '', friend,:class=>"icon-eye-open" %></td>
+    <td><%= link_to '', edit_friend_path(friend),:class=>"icon-edit" %></td>
+    <td><%= link_to '', friend, method: :delete, data: { confirm: 'Are you sure?' },:class=>"icon-trash" %></td>
+  </tr>
+<% end %>
+</table>

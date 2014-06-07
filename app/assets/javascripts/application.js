@@ -13,4 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datetimepicker
 //= require_tree .
+
+ $('.datetimepicker').datetimepicker({
+        pickSeconds: false
+    });
+
+    $('.timepicker').datetimepicker({
+        pickDate: false,
+        pickSeconds: false
+    });
+
+    $('.datepicker').datetimepicker({
+        pickTime: false
+    });

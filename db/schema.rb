@@ -11,7 +11,43 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140607093559) do
+ActiveRecord::Schema.define(:version => 20140607112908) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.decimal  "total"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "evnets_shares", :force => true do |t|
+    t.decimal  "share"
+    t.integer  "event_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "evnets_shares", ["event_id"], :name => "index_evnets_shares_on_event_id"
+  add_index "evnets_shares", ["friend_id"], :name => "index_evnets_shares_on_friend_id"
+
+  create_table "friends", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "shares", :force => true do |t|
+    t.decimal  "share"
+    t.integer  "event_id"
+    t.integer  "friends_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "shares", ["event_id"], :name => "index_shares_on_event_id"
+  add_index "shares", ["friends_id"], :name => "index_shares_on_friends_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

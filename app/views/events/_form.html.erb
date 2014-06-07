@@ -1,0 +1,23 @@
+<%= simple_form_for(@event,:html => {:class => 'form-horizontal' },) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :total %>
+    <%= f.input :created_at, :as => :datetime_picker %>
+    <% @friends.each do |friend|%>
+			<%= label_tag friend.name %> 
+		<div class="controls">
+			<%= text_field_tag "users[#{friend.id}]"%>
+		</div>
+    <%end%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit,:class=>"btn-primary" %>
+
+<%= link_to 'Back', events_path,:class=>" btn" %>
+  </div>
+<% end %>
+

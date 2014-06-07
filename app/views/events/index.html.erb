@@ -1,0 +1,27 @@
+<h3>Listing events</h3>
+<div class="clearfix pull-right new-button">
+  <%= link_to 'New Event', new_event_path ,:class => 'btn btn-primary '%>
+</div>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Total</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.location %></td>
+    <td><%= event.total %></td>
+    <td><%= event.created_at %></td>
+    <td><%= event.updated_at %></td>
+    <td><%= link_to '', event ,:class=>"icon-eye-open"%></td>
+    <td><%= link_to '', event, method: :delete, data: { confirm: 'Are you sure?' },:class=>"icon-trash"  %></td>
+  </tr>
+<% end %>
+</table>

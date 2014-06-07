@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Share:</b>
+  <%= @evnets_share.share %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @evnets_share.event %>
+</p>
+
+<p>
+  <b>Friend:</b>
+  <%= @evnets_share.friend %>
+</p>
+
+
+<%= link_to 'Edit', edit_evnets_share_path(@evnets_share) %> |
+<%= link_to 'Back', evnets_shares_path %>

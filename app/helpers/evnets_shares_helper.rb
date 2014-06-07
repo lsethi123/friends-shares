@@ -1,0 +1,2 @@
+module EvnetsSharesHelper
+end

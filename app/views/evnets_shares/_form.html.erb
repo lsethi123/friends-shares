@@ -1,0 +1,13 @@
+<%= simple_form_for(@evnets_share) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :share %>
+    <%= f.association :event %>
+    <%= f.association :friend %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

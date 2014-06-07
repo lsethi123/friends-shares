@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  share: 9.99
+  event: 
+  friend: 
+
+two:
+  share: 9.99
+  event: 
+  friend: 

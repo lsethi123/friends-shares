@@ -1,4 +1,13 @@
 FriendsShares::Application.routes.draw do
+  resources :evnets_shares
+
+
+  resources :events
+
+
+  resources :friends
+
+
   authenticated :user do
     root :to => 'home#index'
   end

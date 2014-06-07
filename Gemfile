@@ -12,6 +12,8 @@ gem 'devise'
 gem 'figaro'
 gem 'pg'
 gem 'simple_form'
+#gem 'bootstrap-datetimepicker-rails'
+gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19]
